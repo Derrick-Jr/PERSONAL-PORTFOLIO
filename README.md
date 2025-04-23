@@ -115,4 +115,3 @@ This project is open-source and free to use or adapt for personal and profession
 
 ```
 
-Would you like help uploading this to GitHub or linking it to your Netlify site repo?
