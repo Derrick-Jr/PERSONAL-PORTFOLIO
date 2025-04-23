@@ -33,7 +33,6 @@ This portfolio features:
 
  📂 Project Structure
 
-```
 portfolio/
 ├── index.html                Main HTML file
 ├── style.css                 Core CSS styles
@@ -83,7 +82,7 @@ All layouts adapt smoothly to different screen sizes.
 
 I'm a Medical Laboratory Science student at Kenyatta University, driven by a desire to merge clinical expertise with computational intelligence. I explore the intersection of healthcare and emerging technologies to create solutions that matter.
 
-> “In the Lab, I analyze samples to find answers. In Code, I analyze logic to build solutions — both are about making a difference.”
+ “In the Lab, I analyze samples to find answers. In Code, I analyze logic to build solutions — both are about making a difference.”
 
 
  📬 Contact
