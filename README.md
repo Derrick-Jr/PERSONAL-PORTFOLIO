@@ -34,7 +34,7 @@ This portfolio features:
 - Media Queries — Fully responsive design
 
 ---
-```markdown
+
  📂 Project Structure
 
 ```
