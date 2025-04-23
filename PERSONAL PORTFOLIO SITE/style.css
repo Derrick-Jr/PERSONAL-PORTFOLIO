@@ -618,107 +618,38 @@ input:checked + .slider:before {
     position: relative;
 }
 
-.timeline {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
+.education-swiper {
+    padding: 2rem 0;
+    width: 100%;
 }
 
-.timeline::after {
-    content: '';
-    position: absolute;
-    width: 4px;
-    background: var(--gradient-primary);
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    margin-left: -2px;
-    border-radius: 2px;
-}
-
-.timeline-item {
-    position: relative;
-    width: 50%;
-    padding: 2rem;
-    box-sizing: border-box;
-}
-
-.timeline-item:nth-child(odd) {
-    left: 0;
-}
-
-.timeline-item:nth-child(even) {
-    left: 50%;
-}
-
-.timeline-dot {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    right: -10px;
-    background-color: var(--accent-color);
-    border-radius: 50%;
-    z-index: 1;
-    box-shadow: 0 0 0 4px var(--primary-color);
-}
-
-.timeline-item:nth-child(even) .timeline-dot {
-    left: -10px;
-}
-
-.timeline-date {
-    position: absolute;
-    width: 120px;
-    text-align: center;
-    padding: 0.5rem;
-    background: var(--gradient-primary);
-    color: white;
-    border-radius: 20px;
-    top: 0;
-    right: -150px;
-    font-weight: 500;
-}
-
-.timeline-item:nth-child(even) .timeline-date {
-    left: -150px;
-    right: auto;
-}
-
-.timeline-content {
+.swiper-slide.timeline-item {
     background: var(--card-bg);
     backdrop-filter: blur(10px);
     border-radius: var(--border-radius);
-    padding: 1.5rem;
+    padding: 2rem;
     box-shadow: var(--card-shadow);
     border: var(--glass-border);
-    transition: var(--transition);
+    max-width: 350px;
+    height: auto;
 }
 
-.timeline-content:hover {
-    transform: translateY(-5px);
-}
-
-.timeline-content h3 {
-    margin-bottom: 0.5rem;
+.swiper-slide h3 {
     color: var(--primary-color);
+    margin-bottom: 0.5rem;
 }
 
-.timeline-content h4 {
-    font-weight: 500;
+.swiper-slide p {
     margin-bottom: 1rem;
 }
 
-.timeline-details {
-    margin-top: 1rem;
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--primary-color);
 }
 
-.timeline-details ul {
-    padding-left: 1.5rem;
-    list-style-type: disc;
-}
-
-.timeline-details li {
-    margin-bottom: 0.5rem;
+.swiper-pagination-bullet-active {
+    background: var(--primary-color);
 }
 
 /* Projects Section */
@@ -1093,7 +1024,7 @@ footer {
 .back-to-top {
     position: fixed;
     bottom: 2rem;
-    right: 2rem;
+    right: 1.0rem;
     width: 50px;
     height: 50px;
     background: var(--gradient-primary);
@@ -1119,6 +1050,62 @@ footer {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(99, 102, 241, 0.4);
 }
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 99999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.modal-content {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    max-width: 800px;
+    width: 100%;
+    padding: 2rem;
+    position: relative;
+    color: var(--text-color);
+    box-shadow: var(--glass-shadow);
+    animation: fadeInUp 0.5s ease-in-out;
+}
+
+.modal-content img {
+    width: 100%;
+    margin: 1rem 0;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+}
+
+.modal-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.modal-tags span {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px; right: 20px;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
 
 /* Responsive Design */
 @media (max-width: 992px) {
@@ -1253,3 +1240,118 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+.loader {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(255,255,255,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+.loader::after {
+    content: "";
+    width: 50px; height: 50px;
+    border: 6px solid #ccc;
+    border-top: 6px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#download-cv:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+}
+
+#chatbot-container {
+    position: fixed;
+    bottom: 5.5rem;
+    right: 1.0rem;
+    z-index: 9999;
+    font-family: 'Poppins', sans-serif;
+}
+#chatbot-toggle {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 0.8rem;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: var(--card-shadow);
+}
+#chatbot-box {
+    width: 300px;
+    background: var(--card-bg);
+    border: var(--glass-border);
+    box-shadow: var(--card-shadow);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+}
+#chatbot-box.hidden {
+    display: none;
+}
+#chatbot-header {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.8rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#chatbot-close {
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0 0.5rem;
+    transition: transform 0.2s ease;
+}
+#chatbot-close:hover {
+    transform: scale(1.3);
+    color: var(--accent-color);
+}
+#chatbot-messages {
+    padding: 0.5rem;
+    height: 200px;
+    overflow-y: auto;
+    font-size: 0.9rem;
+}
+#chatbot-input {
+    border: none;
+    padding: 0.8rem;
+    outline: none;
+}
+#chatbot-messages em {
+    color: gray;
+    font-style: italic;
+}
+
+
+@media (max-width: 576px) {
+    #chatbot-toggle {
+        padding: 0.6rem;
+        font-size: 1rem;
+    }
+
+    .back-to-top {
+        width: 45px;
+        height: 45px;
+        bottom: 1.5rem;
+    }
+
+    #chatbot-container {
+        bottom: 5rem; /* keep spacing on small screen */
+    }
+}
+
+
+

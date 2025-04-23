@@ -228,15 +228,20 @@ if (contactForm) {
 }
 
 // CV Download functionality
-if (downloadCvBtn) {
-    downloadCvBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        // In a real app, this would link to the actual CV file
-        alert('CV download functionality will be implemented soon.');
-        // When ready, use this:
-        // window.open('path/to/your/cv.pdf', '_blank');
-    });
-}
+downloadCvBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    const spinner = document.createElement('div');
+    spinner.className = 'loader';
+    document.body.appendChild(spinner);
+
+    setTimeout(() => {
+        window.open('KDMCV.pdf', '_blank');
+        document.body.removeChild(spinner);
+    }, 500);
+});
+
+
+
 
 // Navbar scroll effect
 function handleNavbarScroll() {
@@ -282,10 +287,25 @@ function preloader() {
 }
 
 // Initialize all functions
-function init() {
-    loadThemePreference();
-    handleNavbarScroll();
-    preloader();
+    function init() {
+        loadThemePreference();
+        handleNavbarScroll();
+        preloader();
+    
+        const chatbotClose = document.getElementById("chatbot-close");
+        if (chatbotClose) {
+            chatbotClose.addEventListener("click", () => {
+                chatbotBox.classList.add("hidden");
+            });
+        }
+    
+        if (document.readyState === 'complete') {
+            typeText();
+            animateProgressBars();
+            animateOnScroll();
+        }
+    }
+    
     
     // If page is already loaded when script runs
     if (document.readyState === 'complete') {
@@ -293,7 +313,51 @@ function init() {
         animateProgressBars();
         animateOnScroll();
     }
-}
+
+
+// Project Modal Logic
+const modal = document.getElementById("project-modal");
+const modalTitle = document.getElementById("modal-title");
+const modalImg = document.getElementById("modal-img");
+const modalDesc = document.getElementById("modal-desc");
+const modalTags = document.getElementById("modal-tags");
+const closeBtn = document.querySelector(".close-btn");
+
+document.querySelectorAll(".project-card").forEach(card => {
+    card.addEventListener("click", () => {
+        const title = card.querySelector("h3").textContent;
+        const desc = card.querySelector("p").textContent;
+        const imgSrc = card.querySelector("img").src;
+        const tags = [...card.querySelectorAll(".tag")].map(tag => tag.textContent);
+
+        modalTitle.textContent = title;
+        modalDesc.textContent = desc;
+        modalImg.src = imgSrc;
+
+        modalTags.innerHTML = "";
+        tags.forEach(tag => {
+            const span = document.createElement("span");
+            span.textContent = tag;
+            modalTags.appendChild(span);
+        });
+
+        modal.style.display = "flex";
+        document.body.style.overflow = "hidden";
+    });
+});
+
+closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+    document.body.style.overflow = "auto";
+});
+
+window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+    }
+});
+
 
 // Start everything
 init();
@@ -365,3 +429,101 @@ style.innerHTML = `
 `;
 
 document.head.appendChild(style);
+// CHATBOT LOGIC
+const chatbotToggle = document.getElementById("chatbot-toggle");
+const chatbotBox = document.getElementById("chatbot-box");
+const chatbotInput = document.getElementById("chatbot-input");
+const chatbotMessages = document.getElementById("chatbot-messages");
+const chatbotClose = document.getElementById("chatbot-close");
+
+let hasGreeted = false;
+
+chatbotToggle.addEventListener("click", () => {
+    chatbotBox.classList.toggle("hidden");
+});
+
+if (chatbotClose) {
+    chatbotClose.addEventListener("click", () => {
+        chatbotBox.classList.add("hidden");
+    });
+}
+
+chatbotInput.addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
+        const userMsg = chatbotInput.value.trim();
+        if (userMsg !== "") {
+            appendMessage("You", userMsg);
+            getBotResponse(userMsg);
+            chatbotInput.value = "";
+        }
+    }
+});
+
+function appendMessage(sender, message) {
+    const msg = document.createElement("div");
+    msg.innerHTML = `<strong>${sender}:</strong> ${message}`;
+    chatbotMessages.appendChild(msg);
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+}
+
+function getBotResponse(msg) {
+    let lower = msg.toLowerCase();
+    let response = "Sorry, I don’t understand.";
+
+    if (lower.includes("name")) response = "I'm Derrick Kurura.";
+    else if (lower.includes("skills")) response = "HTML, CSS, JS, Python, Data Science, ML.";
+    else if (lower.includes("education")) response = "I'm a Medical Lab Science student at KU.";
+    else if (lower.includes("project")) response = "Check my latest projects in the Projects section.";
+
+    const typingMsg = document.createElement("div");
+    typingMsg.id = "typing";
+    typingMsg.innerHTML = `<strong>DerrickBot:</strong> <em>typing...</em>`;
+    chatbotMessages.appendChild(typingMsg);
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
+    setTimeout(() => {
+        typingMsg.remove();
+        appendMessage("DerrickBot", response);
+    }, 1500);
+}
+
+function autoGreet(message) {
+    if (!hasGreeted) {
+        chatbotBox.classList.remove("hidden");
+        appendMessage("DerrickBot", message);
+        hasGreeted = true;
+    }
+
+// Auto greet after 10s or scroll
+setTimeout(() => autoGreet("Hi there! 👋 Want to know more about my skills or projects?"), 10000);
+window.addEventListener('scroll', () => {
+    if (window.scrollY > window.innerHeight / 2) {
+        autoGreet("Need help exploring my portfolio? I'm here to chat!");
+    }
+}, { once: true });
+}
+
+new Swiper('.education-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: false,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+        640: {
+            slidesPerView: 1.2,
+        },
+        768: {
+            slidesPerView: 2,
+        },
+        1024: {
+            slidesPerView: 3,
+        }
+    }
+});

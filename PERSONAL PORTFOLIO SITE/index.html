@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
 </head>
 <body>
     <div class="theme-switch-wrapper">
@@ -230,78 +232,63 @@
         <div class="section-header">
             <h2>Education & Experience</h2>
             <div class="underline"></div>
-        </div>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">2022 - 2026 (Expected)</div>
-                <div class="timeline-content">
+            <div class="swiper education-swiper">
+                <div class="swiper-wrapper">
+                  <!-- Slide 1 -->
+                  <div class="swiper-slide timeline-item">
                     <h3>Kenyatta University</h3>
-                    <h4>Bachelor of Science in Medical Laboratory Science</h4>
-                    <div class="timeline-details">
-                        <p><strong>Leadership Roles:</strong></p>
-                        <ul>
-                            <li>Vice Chairperson, Kenyatta University Medical Scientists Research Society (KUMESRES) (Feb 2024 – Feb 2025)</li>
-                            <li>ICT Coordinator, Association of Kenyatta University Medical Laboratory Students (AKUMELS) (Nov 2024 – Present)</li>
-                            <li>Assistant Director, Standing Committe On Research Exchange - Kenya Medical Laboratory Students Association (Mar 2024 – Mar 2025)</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">Feb - June 2025 (Expected)</div>
-                <div class="timeline-content">
+                    <p><strong>2022 - 2026 (Expected)</strong><br>Bachelor of Science in Medical Laboratory Science</p>
+                    <ul>
+                      <li>Vice Chairperson – KUMESRES (Feb 2024 – Feb 2025)</li>
+                      <li>ICT Coordinator – AKUMELS (Nov 2024 – Present)</li>
+                      <li>Assistant Director – KEMLSA (Mar 2024 – Mar 2025)</li>
+                    </ul>
+                  </div>
+              
+                  <!-- Slide 2 -->
+                  <div class="swiper-slide timeline-item">
                     <h3>PLP - AFRICA</h3>
-                    <h4>Software Development</h4>
-                    <div class="timeline-details">
-                        <ul>
-                            <li>Software Engineering, Python Programming, Web Development, Database Design and Programming With SQL, Entrepreneurship and Start Up Building</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">November - June 2025 (Expected)</div>
-                <div class="timeline-content">
+                    <p><strong>Feb - June 2025 (Expected)</strong><br>Software Development Bootcamp</p>
+                    <ul>
+                      <li>Python, Web Dev, SQL, Startup Building</li>
+                    </ul>
+                  </div>
+              
+                  <!-- Slide 3 -->
+                  <div class="swiper-slide timeline-item">
                     <h3>Udemy</h3>
-                    <h4>Fullstack Web Development and AI Python(Django)</h4>
-                    <div class="timeline-details">
-                        <ul>
-                            <li>Full-Stack Web Development & AI Integration – The course teaches HTML, CSS, JavaScript, Python, Django, Git, and Linux for web development, alongside AI and machine learning with Pandas, Sklearn, and Keras.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">April - July 2024</div>
-                <div class="timeline-content">
-                    <h3>Kitale County Hospital National Public Health Reference Laboratory</h3>
-                    <h4>Medical Laboratory Attachee</h4>
-                    <div class="timeline-details">
-                        <ul>
-                            <li>Conducted laboratory diagnostics under expert supervision</li>
-                            <li>Developed proficiency in sample collection, phlebotomy, and diagnostic procedures</li>
-                            <li>Contributed to microbiological data analysis using Excel during the ACORN project</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">2018 - 2022</div>
-                <div class="timeline-content">
+                    <p><strong>November - June 2025 (Expected)</strong><br>Fullstack Web Development and AI with Python (Django)</p>
+                    <ul>
+                      <li>HTML, CSS, JS, Python, Django, Git, Linux</li>
+                      <li>AI & ML: Pandas, Sklearn, Keras</li>
+                    </ul>
+                  </div>
+              
+                  <!-- Slide 4 -->
+                  <div class="swiper-slide timeline-item">
+                    <h3>Kitale County Hospital</h3>
+                    <p><strong>April - July 2024</strong><br>Medical Laboratory Attachment</p>
+                    <ul>
+                      <li>Phlebotomy, Diagnostics, ACORN Microbiology Data Analysis</li>
+                    </ul>
+                  </div>
+              
+                  <!-- Slide 5 -->
+                  <div class="swiper-slide timeline-item">
                     <h3>St. Patrick's Mixed Day Secondary School, Makunga</h3>
-                    <h4>Kenya Certificate of Secondary Education (KCSE)</h4>
-                    <div class="timeline-details">
-                        <p>Grade: A-</p>
-                        <p>Society Participation: Science Congress Club</p>
-                    </div>
+                    <p><strong>2018 - 2022</strong><br>KCSE (Grade: A-)</p>
+                    <ul>
+                      <li>Science Congress Club Member</li>
+                    </ul>
+                  </div>
                 </div>
-        </div>
-    </section>
+              
+                <!-- Navigation Buttons -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <!-- Pagination Dots -->
+                <div class="swiper-pagination"></div>
+              </div>
 
     <section id="projects" class="projects-section">
         <div class="section-header">
@@ -331,7 +318,7 @@
             </div>
             <div class="project-card">
                 <div class="project-img">
-                    <img src="MMPROTECT.jpg" alt="Mammary Protect Project">
+                    <img src="MMPROTECT.jpg" alt="Mammary Protect Project Image">
                 </div>
                 <div class="project-content">
                     <h3>Mammary Protect Project</h3>
@@ -551,6 +538,34 @@
         <i class="fas fa-arrow-up"></i>
     </div>
 
-    <script src="script.js"></script>
+    
+    <!-- Modal -->
+<div id="project-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h3 id="modal-title"></h3>
+      <img id="modal-img" src="" alt="Project Image">
+      <p id="modal-desc"></p>
+      <div id="modal-tags" class="modal-tags"></div>
+    </div>
+  </div>
+
+  <!-- CHATBOT START -->
+<div id="chatbot-container">
+    <div id="chatbot-toggle">💬</div>
+    <div id="chatbot-box" class="hidden">
+      <div id="chatbot-header">
+        Ask Me Anything
+        <span id="chatbot-close">&times;</span>
+      </div>
+      <div id="chatbot-messages"></div>
+      <input type="text" id="chatbot-input" placeholder="Type your question..." />
+    </div>
+  </div>
+  <!-- CHATBOT END -->
+  
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+  
 </body>
 </html>
