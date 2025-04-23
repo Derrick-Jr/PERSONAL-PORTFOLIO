@@ -259,16 +259,41 @@ function handleNavbarScroll() {
 }
 
 // Preloader functionality
+// Preloader functionality (Quote Version)
 function preloader() {
-    const loader = document.createElement('div');
-    loader.className = 'preloader';
-    loader.innerHTML = `
-        <div class="loader">
-            <div class="loading-animation"></div>
-        </div>
-    `;
-    
-    document.body.appendChild(loader);
+    const quotes = [
+        "Code is like humor. When you have to explain it, it’s bad. — Cory House",
+        "Programs must be written for people to read. — Harold Abelson",
+        "The only way to learn a new programming language is by writing programs in it. — Dennis Ritchie",
+        "Any sufficiently advanced technology is indistinguishable from magic. — Arthur C. Clarke"
+    ];
+
+    const preloader = document.createElement('div');
+    preloader.className = 'quote-preloader';
+
+    const spinner = document.createElement('div');
+    spinner.className = 'loader-spinner';
+
+    const quote = document.createElement('div');
+    quote.className = 'quote-text';
+    quote.innerText = quotes[Math.floor(Math.random() * quotes.length)];
+
+    preloader.appendChild(spinner);
+    preloader.appendChild(quote);
+    document.body.appendChild(preloader);
+
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            preloader.style.opacity = '0';
+            setTimeout(() => {
+                document.body.removeChild(preloader);
+                typeText();
+                animateProgressBars();
+            }, 500);
+        }, 1000);
+    });
+}
+
     
     // Hide preloader when page is loaded
     window.addEventListener('load', () => {
@@ -284,7 +309,7 @@ function preloader() {
             }, 500);
         }, 1000);
     });
-}
+
 
 // Initialize all functions
     function init() {
@@ -305,8 +330,9 @@ function preloader() {
             animateOnScroll();
         }
     }
+
     
-    
+
     // If page is already loaded when script runs
     if (document.readyState === 'complete') {
         typeText();
@@ -362,71 +388,57 @@ window.addEventListener("click", (e) => {
 // Start everything
 init();
 
+
+
 // Add some CSS programmatically for the preloader
 const style = document.createElement('style');
 style.innerHTML = `
-    .preloader {
+    .quote-preloader {
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: var(--background-color);
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-color: var(--background-color);
+        color: var(--text-color);
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         z-index: 9999;
-        transition: opacity 0.5s ease;
+        transition: opacity 1.0s ease;
+        font-family: 'Poppins', sans-serif;
+        text-align: center;
+        padding: 2rem;
     }
-    
-    .loader {
-        position: relative;
-        width: 100px;
-        height: 100px;
-    }
-    
-    .loading-animation {
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        border: 3px solid transparent;
+
+    .loader-spinner {
+        width: 50px;
+        height: 50px;
+        border: 6px solid #ccc;
         border-top-color: var(--primary-color);
-        animation: spin 1s linear infinite;
-    }
-    
-    .loading-animation:before {
-        content: '';
-        position: absolute;
-        top: 5px;
-        left: 5px;
-        right: 5px;
-        bottom: 5px;
         border-radius: 50%;
-        border: 3px solid transparent;
-        border-top-color: var(--accent-color);
-        animation: spin 2s linear infinite;
+        margin-bottom: 2rem;
+        animation: spin 3s linear infinite;
     }
-    
+
+    .quote-text {
+        font-size: 1.1rem;
+        max-width: 600px;
+        font-weight: 500;
+        opacity: 0.8;
+        animation: fadeIn 3s ease-in-out;
+    }
+
     @keyframes spin {
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
     }
-    
-    .animated {
-        animation: fadeInUp 0.5s ease forwards;
-    }
-    
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 `;
+
 
 document.head.appendChild(style);
 // CHATBOT LOGIC
@@ -527,3 +539,17 @@ new Swiper('.education-swiper', {
         }
     }
 });
+
+if (element.classList.contains('skill-card')) {
+    const icons = element.querySelectorAll('.skill-badge img');
+    icons.forEach(icon => {
+        icon.style.opacity = 0;
+        setTimeout(() => {
+            icon.style.opacity = 1;
+            icon.style.transform = 'scale(1.1)';
+            setTimeout(() => {
+                icon.style.transform = 'scale(1)';
+            }, 300);
+        }, 300);
+    });
+}

@@ -1353,5 +1353,81 @@ footer {
     }
 }
 
+.skill-badge {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.skill-badge img {
+    width: 32px;
+    height: 32px;
+    filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.15));
+    transition: transform 0.3s ease;
+}
+
+.skill-badge img:hover {
+    transform: scale(1.2);
+}
+
+.cert-logo {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    border-radius: 8px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    transition: transform 0.3s ease;
+}
+
+.cert-logo:hover {
+    transform: scale(1.1);
+}
+
+.quote-preloader {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 1.0s ease;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    padding: 2rem;
+}
+
+.quote-preloader .loader-spinner {
+    width: 50px;
+    height: 50px;
+    border: 6px solid #ccc;
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    margin-bottom: 2rem;
+    animation: spin 3s linear infinite;
+}
+
+.quote-text {
+    font-size: 1.1rem;
+    max-width: 600px;
+    font-weight: 500;
+    opacity: 0.8;
+    animation: fadeIn 3s ease-in-out;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 
 
