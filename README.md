@@ -1,110 +1,101 @@
-﻿# PERSONAL-PORTFOLIO
-Derrick Kurura - Personal Portfolio
-📋 Overview
+ 🌐 Derrick Kurura — Personal Portfolio
 
-A responsive personal portfolio website showcasing my skills, experience, and projects. This portfolio highlights the unique intersection of Medical Laboratory Science with Data Science, AI, and Machine Learning.
+A modern, responsive personal portfolio website highlighting my unique background in Medical Laboratory Science and my passion for Data Science, AI, and Machine Learning. Built with simplicity, elegance, and interactivity in mind, this site serves as both a professional showcase and a personal narrative.
+
+ 📸 Live Demo
+
+🔗 [View Portfolio](https://devderrick.netlify.app)
 
 
-✨ Features
+ 📋 Overview
 
-Responsive Design: Fully mobile-responsive layout that works across all devices
-Dark/Light Mode: Toggle between dark and light themes
-Interactive UI: Animated elements and smooth scrolling navigation
-Project Showcase: Visual display of projects with descriptions and links
-Skills Visualization: Visual representation of skills with progress bars
-Timeline Layout: Education and experience displayed in an intuitive timeline
-Contact Form: Direct way for visitors to get in touch
-Social Media Integration: Links to all my professional profiles
+This portfolio features:
 
-🛠️ Technologies Used
+- A fully responsive layout compatible with all devices
+- Dark/light theme toggle with persistent preference
+- Smooth animations and interactive UI components
+- Project gallery with live demos and GitHub links
+- Skills section with animated progress bars
+- Experience and education timeline
+- Built-in contact form
+- Integrated social links
 
-HTML: Semantic markup structure
-CSS: Custom styling with flexbox and grid layouts
-JavaScript: Interactive elements and animations
-Font Awesome: Icon library
-Google Fonts: Typography (Poppins)
-Responsive Design: Media queries for device adaptation
 
- Getting Started
+ 🛠️ Built With
 
-Prerequisites
+- HTML5 — Semantic structure
+- CSS3 — Custom styling with Flexbox & Grid
+- JavaScript (Vanilla) — UI interactivity and theme logic
+- Font Awesome — Iconography
+- Google Fonts (Poppins) — Typography
+- Media Queries — Fully responsive design
 
-Any modern web browser, type devderrick.netlify.app to access my portfolio website.
-Basic code editor (VS Code, Sublime Text, etc.) for modifications
-Installation
 
-Open index.html in your browser or use a local development server.
-📂 Project Structure
+ 📂 Project Structure
 
+```
 portfolio/
-├── index.html               Main HTML file
-├── style.css                Main stylesheet
-├── script.js                JavaScript functionality
-├── README.md                Project documentation
-├── KDMCV.pdf                Resume/CV file
-├── images/                  Image assets
-│   ├── dee1.jpg             Profile image
-│   ├── VLP-DASHBOARD.PNG    Project screenshots
-│   ├── MMPROTECT.jpg
-│   ├── PATHOTRACK.PNG
+├── index.html                Main HTML file
+├── style.css                 Core CSS styles
+├── script.js                 JavaScript interactivity
+├── KDMCV.pdf                 Resume/CV
+├── images/                   Project and profile assets
+│   ├── dee1.jpg             
+│   ├── VLP-DASHBOARD.PNG    
+│   ├── MMPROTECT.jpg        
+│   ├── PATHOTRACK.PNG       
 │   └── PATHOGEN SURVEILLANCE.PNG
-🎨 Customization
+└── README.md                 Project documentation
 
-Modifying Content
 
-Edit the HTML files to update:
+ 🎨 Customization
 
-Personal information
-Skills and proficiency levels
-Projects and their descriptions
-Education and experience timeline
-Contact information
-Styling Changes
+To personalize the portfolio:
 
-Modify style.css to change:
+- Content: Edit `index.html` to update personal details, skills, projects, and timeline items.
+- Styling: Modify `style.css` to change color schemes, layout, fonts, or animation styles.
+- Add Sections: Extend the HTML and CSS files by following the existing pattern. Don't forget to update the navigation links.
 
-Color schemes
-Typography
-Layout and spacing
-Animations and transitions
-Adding New Sections
 
-Create a new section in index.html following the existing pattern
-Add corresponding styles in style.css
-Update navigation in both the header and footer
-🔍 Key Components
+ 🚀 Getting Started
 
-Theme Switcher
+To run the project locally:
 
-The site includes a dark/light mode toggle that persists user preference through local storage.
+1. Clone the repository:
+   bash
+   git clone https://github.com/Derrick-Jr/personal-portfolio.git
 
-Animated Progress Bars
+2. Open `index.html` in any browser, or use a local development server like VS Code’s Live Server.
 
-Skills are visualized with animated progress bars that fill to the specified proficiency level.
 
-Interactive Timeline
+ 📱 Responsive Design
 
-Education and experience are displayed in a vertical timeline with hover effects and detailed information.
+Tested across:
 
-Project Cards
+- ✅ Desktops
+- ✅ Tablets
+- ✅ Smartphones
 
-Projects are showcased in cards with images, descriptions, technology tags, and links.
+All layouts adapt smoothly to different screen sizes.
 
-📱 Responsive Behavior
 
-The portfolio adapts to different screen sizes:
+ 👨‍💻 About Me
 
-Desktop: Full layout with side-by-side elements
-Tablet: Adjusted spacing and slightly reorganized elements
-Mobile: Stacked layout with optimized spacing and touch-friendly elements
-👨‍💻 About
+I'm a Medical Laboratory Science student at Kenyatta University, driven by a desire to merge clinical expertise with computational intelligence. I explore the intersection of healthcare and emerging technologies to create solutions that matter.
 
-I'm a Medical Laboratory Science student at Kenyatta University with a passion for Data Science, AI, and Machine Learning. I combine healthcare knowledge with technical skills to create innovative solutions.
+> “In the Lab, I analyze samples to find answers. In Code, I analyze logic to build solutions — both are about making a difference.”
 
-🔗 Connect with Derrick
 
-LinkedIn: derrick-kurura-421610243
-Email: kururaderrick@gmail.com
-WhatsApp: +254700383811
-GitHub: Derrick-Jr
-📌 "In the Lab, I analyze samples to find answers; In Code, I analyze logic to build solutions—both are about making a difference."
+ 📬 Contact
+
+Feel free to reach out:
+
+- 📧 Email: kururaderrick@gmail.com  
+- 💼 LinkedIn: [derrick-kurura-421610243](https://linkedin.com/in/derrick-kurura-421610243)  
+- 💬 WhatsApp: [+254 700 383 811](https://wa.me/254700383811)  
+- 💻 GitHub: [Derrick-Jr](https://github.com/Derrick-Jr)
+
+ 📌 License
+
+This project is open-source and free to use or adapt for personal and professional portfolios. Attribution is appreciated!
+
