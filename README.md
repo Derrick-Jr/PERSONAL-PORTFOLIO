@@ -87,16 +87,9 @@ Derrick Kurura
 - Email: [kururaderrick@gmail.com](mailto:kururaderrick@gmail.com)
 - LinkedIn: [linkedin.com/in/derrick-kurura-421610243](https://linkedin.com/in/derrick-kurura-421610243)
 - GitHub: [github.com/Derrick-Jr](https://github.com/Derrick-Jr)
-
+  
 ---
 
- 📝 License
-
-This project is open-source and available under the [MIT License](LICENSE).
-
----
-
-> “In the lab, I analyze samples to find answers; in code, I analyze logic to build solutions — both are about making a difference.”
-```
+ “In the lab, I analyze samples to find answers; in code, I analyze logic to build solutions — both are about making a difference.”
 
 ---
