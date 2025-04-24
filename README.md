@@ -1,115 +1,102 @@
+ Derrick Kurura | Personal Portfolio 👨‍⚕️💻
 
- 🌐 Derrick Kurura — Personal Portfolio
+Welcome to the source code of my personal portfolio website — a showcase of who I am, what I do, and the projects I'm passionate about. Built with HTML, CSS, and JavaScript, this site highlights my unique journey blending Medical Laboratory Science with Data Science, AI, and Web Development.
 
-A modern, responsive personal portfolio website highlighting my unique background in Medical Laboratory Science and my passion for Data Science, AI, and Machine Learning. Built with simplicity, elegance, and interactivity in mind, this site serves as both a professional showcase and a personal narrative.
-
- 📸 Live Demo
-
-🔗 [View Portfolio](https://devderrick.netlify.app)
+🌐 Live Demo: [devderrick.netlify.app](https://devderrick.netlify.app)
 
 ---
 
- 📋 Overview
+ 📌 Overview
 
 This portfolio features:
 
-- A fully responsive layout compatible with all devices
-- Dark/light theme toggle with persistent preference
-- Smooth animations and interactive UI components
-- Project gallery with live demos and GitHub links
-- Skills section with animated progress bars
-- Experience and education timeline
-- Built-in contact form
-- Integrated social links
+- A responsive and accessible UI/UX optimized for mobile and desktop
+- A professional dark mode toggle
+- Interactive typing animation
+- Scroll-triggered animated skill bars
+- Sections for About, Skills, Projects, Certifications, and Contact
+- A smooth preloader with quotes
+- Fully integrated theme switcher and mobile menu
 
 ---
 
  🛠️ Built With
 
-- HTML5 — Semantic structure
-- CSS3 — Custom styling with Flexbox & Grid
-- JavaScript (Vanilla) — UI interactivity and theme logic
-- Font Awesome — Iconography
-- Google Fonts (Poppins) — Typography
-- Media Queries — Fully responsive design
+- HTML5
+- CSS3 (Flexbox, Grid, Media Queries)
+- JavaScript (DOM manipulation, localStorage)
+- Font Awesome & Google Fonts
+- SwiperJS for carousels
+- Netlify for continuous deployment
 
 ---
 
- 📂 Project Structure
+ 📂 Folder Structure
 
 ```
-portfolio/
-├── index.html                Main HTML file
-├── style.css                 Core CSS styles
-├── script.js                 JavaScript interactivity
-├── KDMCV.pdf                 Resume/CV
-├── images/                   Project and profile assets
-│   ├── dee1.jpg             
-│   ├── VLP-DASHBOARD.PNG    
-│   ├── MMPROTECT.jpg        
-│   ├── PATHOTRACK.PNG       
-│   └── PATHOGEN SURVEILLANCE.PNG
-└── README.md                 Project documentation
+/
+├── index.html
+├── style.css
+├── script.js
+├── assets/
+│   ├── images/
+│   └── icons/
+├── KDMCV.pdf
 ```
 
 ---
 
- 🎨 Customization
+ ⚙️ Features
 
-To personalize the portfolio:
-
-- Content: Edit `index.html` to update personal details, skills, projects, and timeline items.
-- Styling: Modify `style.css` to change color schemes, layout, fonts, or animation styles.
-- Add Sections: Extend the HTML and CSS files by following the existing pattern. Don't forget to update the navigation links.
-
----
-
- 🚀 Getting Started
-
-To run the project locally:
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Derrick-Jr/personal-portfolio.git
-   ```
-2. Open `index.html` in any browser, or use a local development server like VS Code’s Live Server.
+- Responsive Design — Works beautifully on all screen sizes
+- Dark Mode — Theme preference saved in local storage
+- Mobile Navigation — Hamburger menu with smooth animation
+- Typing Effect — Dynamic role display using vanilla JS
+- Project Modals — Modal popups for project details
+- Contact Form — Interactive and styled with real-time validation
+- Custom Preloader — Displays a random inspirational quote
 
 ---
 
- 📱 Responsive Design
+ 🚀 Getting Started Locally
 
-Tested across:
+To run this project locally:
 
-- ✅ Desktops
-- ✅ Tablets
-- ✅ Smartphones
+```bash
+git clone https://github.com/your-username/personal-portfolio.git
+cd personal-portfolio
+open index.html   or just drag into a browser
+```
 
-All layouts adapt smoothly to different screen sizes.
-
----
-
- 👨‍💻 About Me
-
-I'm a Medical Laboratory Science student at Kenyatta University, driven by a desire to merge clinical expertise with computational intelligence. I explore the intersection of healthcare and emerging technologies to create solutions that matter.
-
-> “In the Lab, I analyze samples to find answers. In Code, I analyze logic to build solutions — both are about making a difference.”
+No build tools or compilers needed!
 
 ---
 
- 📬 Contact
+ 🧠 Author
 
-Feel free to reach out:
-
-- 📧 Email: kururaderrick@gmail.com  
-- 💼 LinkedIn: [derrick-kurura-421610243](https://linkedin.com/in/derrick-kurura-421610243)  
-- 💬 WhatsApp: [+254 700 383 811](https://wa.me/254700383811)  
-- 💻 GitHub: [Derrick-Jr](https://github.com/Derrick-Jr)
-
----
-
- 📌 License
-
-This project is open-source and free to use or adapt for personal and professional portfolios. Attribution is appreciated!
+Derrick Kurura  
+- 🔬 Medical Laboratory Science student at Kenyatta University  
+- 📊 Aspiring Data Scientist & AI/ML Enthusiast  
+- 🌍 Nairobi, Kenya  
+- 🌐 [Portfolio Website](https://devderrick.netlify.app)
 
 ---
 
+ 📫 Contact Me
+
+- Email: [kururaderrick@gmail.com](mailto:kururaderrick@gmail.com)
+- LinkedIn: [linkedin.com/in/derrick-kurura-421610243](https://linkedin.com/in/derrick-kurura-421610243)
+- GitHub: [github.com/Derrick-Jr](https://github.com/Derrick-Jr)
+
+---
+
+ 📝 License
+
+This project is open-source and available under the [MIT License](LICENSE).
+
+---
+
+> “In the lab, I analyze samples to find answers; in code, I analyze logic to build solutions — both are about making a difference.”
+```
+
+---
