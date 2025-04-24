@@ -8,27 +8,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
 <body>
-    <div class="theme-switch-wrapper">
-        <label class="theme-switch" for="checkbox">
-            <input type="checkbox" id="checkbox" />
-            <div class="slider round"></div>
-        </label>
-        <em>Theme</em> 
-    </div>
 
     <header>
         <nav class="navbar">
             <div class="logo">
                 <span class="logo-text">DEV DK</span>
             </div>
+        
             <div class="menu-toggle" id="mobile-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </div>
+        
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
@@ -37,10 +32,19 @@
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
+        
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                    <div class="slider round"></div>
+                </label>
+            </div>
         </nav>
+    
     </header>
 
     <section id="home" class="hero-section">
+        <div id="particles-js"></div>
         <div class="hero-content">
             <h1>Hello, I'm <span class="highlight">Derrick Kurura</span></h1>
             <div class="typing-container">
@@ -572,9 +576,51 @@
     </div>
   </div>
   <!-- CHATBOT END -->
+
+  <div id="toast" class="toast">
+    <div class="toast-spinner"></div>
+    <span id="toast-message">Sending message...</span>
+</div>
   
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <script src="script.js"></script>
+  <script>
+    particlesJS("particles-js", {
+        "particles": {
+            "number": { "value": 60 },
+            "color": { "value": "#6366F1" },
+            "shape": {
+                "type": "circle"
+            },
+            "opacity": {
+                "value": 0.4
+            },
+            "size": {
+                "value": 4,
+                "random": true
+            },
+            "line_linked": {
+                "enable": true,
+                "distance": 120,
+                "color": "#10B981",
+                "opacity": 0.3,
+                "width": 1
+            },
+            "move": {
+                "enable": true,
+                "speed": 1.5,
+                "direction": "none",
+                "out_mode": "bounce"
+            }
+        },
+        "interactivity": {
+            "events": {
+                "onhover": { "enable": true, "mode": "grab" }
+            }
+        },
+        "retina_detect": true
+    });
+</script>
   
 </body>
 </html>

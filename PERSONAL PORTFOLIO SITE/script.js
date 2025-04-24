@@ -51,10 +51,23 @@ themeToggle.addEventListener('change', () => {
 
 // Check for saved theme preference
 function loadThemePreference() {
-    const darkMode = localStorage.getItem('darkMode');
-    if (darkMode === 'enabled') {
+    const savedTheme = localStorage.getItem('darkMode');
+
+    if (savedTheme === 'enabled') {
         document.body.classList.add('dark-mode');
         themeToggle.checked = true;
+    } else if (savedTheme === 'disabled') {
+        document.body.classList.remove('dark-mode');
+        themeToggle.checked = false;
+    } else {
+        // No preference saved — follow system preference
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.body.classList.add('dark-mode');
+            themeToggle.checked = true;
+        } else {
+            document.body.classList.remove('dark-mode');
+            themeToggle.checked = false;
+        }
     }
 }
 
@@ -63,7 +76,7 @@ function saveThemePreference() {
     if (document.body.classList.contains('dark-mode')) {
         localStorage.setItem('darkMode', 'enabled');
     } else {
-        localStorage.setItem('darkMode', null);
+        localStorage.setItem('darkMode', 'disabled');
     }
 }
 
@@ -195,37 +208,33 @@ function animateOnScroll() {
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        
-        // Get form data
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const subject = document.getElementById('subject').value;
-        const message = document.getElementById('message').value;
-        
-        // Basic form validation
-        if (!name || !email || !message) {
-            alert('Please fill out all required fields.');
-            return;
-        }
-        
-        // Email validation
+    
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const subject = document.getElementById('subject').value.trim();
+        const message = document.getElementById('message').value.trim();
+    
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            alert('Please enter a valid email address.');
+    
+        if (!name || !email || !message) {
+            showToast("Please fill out all required fields.", false);
             return;
         }
-        
-        // Here you would typically send the form data to your server
-        // For demo purposes, we'll just log it and show a success message
-        console.log('Form submitted:', { name, email, subject, message });
-        
-        // Show success message
-        alert('Thank you for your message! I will get back to you soon.');
-        
-        // Reset form
-        contactForm.reset();
+    
+        if (!emailRegex.test(email)) {
+            showToast("Please enter a valid email address.", false);
+            return;
+        }
+    
+        showToast("Sending message...", true);
+    
+        setTimeout(() => {
+            console.log("Form submitted:", { name, email, subject, message });
+            contactForm.reset();
+            showToast("Message sent successfully!", false);
+        }, 1500);
     });
-}
+    
 
 // CV Download functionality
 downloadCvBtn.addEventListener('click', function(e) {
@@ -552,4 +561,23 @@ if (element.classList.contains('skill-card')) {
             }, 300);
         }, 300);
     });
+}
+}
+
+function showToast(message, isLoading = false) {
+    const toast = document.getElementById("toast");
+    const spinner = toast.querySelector(".toast-spinner");
+    const msg = document.getElementById("toast-message");
+
+    msg.textContent = message;
+    spinner.style.display = isLoading ? "inline-block" : "none";
+
+    toast.classList.add("show");
+
+    // Hide after 3 seconds if not loading
+    if (!isLoading) {
+        setTimeout(() => {
+            toast.classList.remove("show");
+        }, 3000);
+    }
 }
